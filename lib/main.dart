@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memowtask21bottomnavigation/memow_icons.dart';
 
 void main() => runApp(MyApp());
 int countNumber = 0;
@@ -88,22 +89,38 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('ホーム'),
+            icon: Icon(
+              Icons.home,
+              size: 40,
+            ),
+            title: Text(
+              'ホーム',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.format_list_bulleted,
+              Memow.caw_1,
+              size: 40,
             ),
-            title: Text('メニュー'),
+            title: Text(
+              '繁殖牛リスト',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('設定'),
+            icon: Icon(
+              Memow.caw_2,
+              size: 40,
+            ),
+            title: Text(
+              '育成牛リスト',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.green,
         onTap: _onItemTopped,
       ),
     );
@@ -150,7 +167,23 @@ class _Screen2State extends State<Screen2> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('2'),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Memow.caw_1,
+              size: 200,
+              color: Colors.green,
+            ),
+            Icon(
+              Memow.caw_2,
+              size: 200,
+              color: Colors.green,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
